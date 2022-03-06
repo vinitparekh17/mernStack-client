@@ -41,11 +41,10 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/signin">
-                  Signin / Signup
+                  Login
                 </Link>
               </li>
             </ul>
-
           </div>
         </div>
       </nav>

@@ -5,6 +5,7 @@ import {Route, Routes} from 'react-router-dom';
 import Home from './components/Contect';
 import About from './components/About';
 import Contect from './components/Contect';
+import Signup from './components/Signup';
 import Signin from './components/Signin';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contect' element={<Contect />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
       </Routes>
 

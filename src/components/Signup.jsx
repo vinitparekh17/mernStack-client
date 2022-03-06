@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Signin() {
+function Signup() {
   return (
     <>
       <section>
@@ -15,10 +15,38 @@ function Signin() {
                 >
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">
-                      <strong>USER LOGIN</strong>
+                      <strong>USER REGISTRATION</strong>
                     </h2>
 
                     <form>
+                      <div className="form-outline mb-4">
+                        <table>
+                          <tr>
+                            <td>
+                              <label className="form-label">
+                                <i class="fa-solid fa-user"></i> First Name
+                              </label>
+                              <input
+                                type="text"
+                                id="form3Example1cg"
+                                className="form-control form-control-lg me-4"
+                              />
+                            </td>
+                            <td>
+                              <label className="form-label">
+                                &nbsp; &nbsp; &nbsp;&nbsp;
+                                <i class="fa-solid fa-user"></i> Last Name
+                              </label>
+                              <input
+                                type="text"
+                                id="form3Example1cg"
+                                className="form-control form-control-lg ms-4"
+                              />
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example3cg">
                           <i class="fa-solid fa-envelope"></i> Email Address
@@ -41,24 +69,38 @@ function Signin() {
                         />
                       </div>
 
+                      <div className="form-outline mb-4">
+                        <label
+                          className="form-label"
+                          htmlFor="form3Example4cdg"
+                        >
+                          <i class="fa-solid fa-lock"></i> Confirm password
+                        </label>
+                        <input
+                          type="password"
+                          id="form3Example4cdg"
+                          className="form-control form-control-lg"
+                        />
+                      </div>
+
                       <div className="d-flex justify-content-center">
                         <button
                           type="button"
                           className="btn btn btn-dark"
                           style={{ width: "100%", height: "3rem" }}
                         >
-                          <b>LOGIN</b>
+                          <b>SIGN UP</b>
                         </button>
                       </div>
 
                       <p className="text-center text-muted mt-3 mb-0">
-                        Don't have an account? &nbsp;
+                        Have already an account? &nbsp;
                         <Link
-                          to="/signup"
+                          to="/signin"
                           className="fw-bold text-body"
                           style={{ textDecoration: "none" }}
                         >
-                          <u>Register now</u>
+                          <u>Login here</u>
                         </Link>
                       </p>
                     </form>
@@ -73,4 +115,4 @@ function Signin() {
   );
 }
 
-export default Signin
+export default Signup;
