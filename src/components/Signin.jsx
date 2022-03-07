@@ -11,7 +11,7 @@ function Signin() {
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div
                   className="card"
-                  style={{ border: "none", borderRadius: "15px" }}
+                  style={{ border: "none" }}
                 >
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">

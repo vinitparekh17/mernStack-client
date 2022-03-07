@@ -8,7 +8,7 @@ function Navbar() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <strong>
-              Study <span id="hub">Hub</span>
+              Study <span className="hub">hub</span>
             </strong>
           </a>
           <button

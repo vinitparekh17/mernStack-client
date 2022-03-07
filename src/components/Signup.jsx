@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Signup() {
+  const [userData, setUserData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
+
+  let name; let value;
+  const handleChange = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+
+    setUserData({ ...userData, [name]: value })
+  }
   return (
     <>
       <section>
@@ -9,10 +24,7 @@ function Signup() {
           <div className="container mt-3 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div
-                  className="card"
-                  style={{ border: "none", borderRadius: "15px" }}
-                >
+                <div className="card" style={{ border: "none" }}>
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">
                       <strong>USER REGISTRATION</strong>
@@ -29,18 +41,27 @@ function Signup() {
                               <input
                                 type="text"
                                 id="form3Example1cg"
+                                name="fname"
                                 className="form-control form-control-lg me-4"
+                                value={userData.fname}
+                                onChange={handleChange}
+                                autoComplete="off"
+                                required
                               />
                             </td>
                             <td>
-                              <label className="form-label">
-                                &nbsp; &nbsp; &nbsp;&nbsp;
+                              <label className="form-label ms-4">
                                 <i class="fa-solid fa-user"></i> Last Name
                               </label>
                               <input
                                 type="text"
                                 id="form3Example1cg"
+                                name="lname"
                                 className="form-control form-control-lg ms-4"
+                                value={userData.lname}
+                                onChange={handleChange}
+                                autoComplete="off"
+                                required
                               />
                             </td>
                           </tr>
@@ -54,7 +75,12 @@ function Signup() {
                         <input
                           type="email"
                           id="form3Example3cg"
+                          name="email"
                           className="form-control form-control-lg"
+                          value={userData.email}
+                          onChange={handleChange}
+                          autoComplete="off"
+                          required
                         />
                       </div>
 
@@ -65,7 +91,12 @@ function Signup() {
                         <input
                           type="password"
                           id="form3Example4cg"
+                          name="password"
                           className="form-control form-control-lg"
+                          value={userData.password}
+                          onChange={handleChange}
+                          autoComplete="off"
+                          required
                         />
                       </div>
 
@@ -79,7 +110,12 @@ function Signup() {
                         <input
                           type="password"
                           id="form3Example4cdg"
+                          name="cpassword"
                           className="form-control form-control-lg"
+                          value={userData.cpassword}
+                          onChange={handleChange}
+                          autoComplete="off"
+                          required
                         />
                       </div>
 
