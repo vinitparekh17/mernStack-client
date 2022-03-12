@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
   const [userData, setUserData] = useState({
-    fname: "",
-    lname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     cpassword: "",
   });
 
-  let name; let value;
+  let name;
+  let value;
   const handleChange = (e) => {
     name = e.target.name;
     value = e.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
+  const postData = async (e) => {
+    e.preventDefault();
+    const { firstName, lastName, email, password, cpassword } = userData
+    console.log(JSON.stringify(userData));
+    const response = await axios.post("/register", JSON.stringify({firstName, lastName, email, password, cpassword}));
 
-    setUserData({ ...userData, [name]: value })
-  }
+    const data = response.json();
+
+    if (data.status === 422 || !data) {
+      window.alert("Invalid registration!");
+    } else {
+      window.alert("Registration successfull");
+    }
+  };
+
   return (
     <>
       <section>
@@ -30,20 +46,21 @@ function Signup() {
                       <strong>USER REGISTRATION</strong>
                     </h2>
 
-                    <form>
+                    <form method="POST" onSubmit={postData}>
                       <div className="form-outline mb-4">
                         <table>
+                          <tbody>
                           <tr>
                             <td>
                               <label className="form-label">
-                                <i class="fa-solid fa-user"></i> First Name
+                                <i className="fa-solid fa-user"></i> First Name
                               </label>
                               <input
                                 type="text"
                                 id="form3Example1cg"
-                                name="fname"
+                                name="firstName"
                                 className="form-control form-control-lg me-4"
-                                value={userData.fname}
+                                value={userData.firstName}
                                 onChange={handleChange}
                                 autoComplete="off"
                                 required
@@ -51,26 +68,27 @@ function Signup() {
                             </td>
                             <td>
                               <label className="form-label ms-4">
-                                <i class="fa-solid fa-user"></i> Last Name
+                                <i className="fa-solid fa-user"></i> Last Name
                               </label>
                               <input
                                 type="text"
                                 id="form3Example1cg"
-                                name="lname"
+                                name="lastName"
                                 className="form-control form-control-lg ms-4"
-                                value={userData.lname}
+                                value={userData.lastName}
                                 onChange={handleChange}
                                 autoComplete="off"
                                 required
                               />
                             </td>
-                          </tr>
+                            </tr>
+                            </tbody>
                         </table>
                       </div>
 
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example3cg">
-                          <i class="fa-solid fa-envelope"></i> Email Address
+                          <i className="fa-solid fa-envelope"></i> Email Address
                         </label>
                         <input
                           type="email"
@@ -86,7 +104,7 @@ function Signup() {
 
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example4cg">
-                          <i class="fa-solid fa-lock"></i> Password
+                          <i className="fa-solid fa-lock"></i> Password
                         </label>
                         <input
                           type="password"
@@ -105,7 +123,7 @@ function Signup() {
                           className="form-label"
                           htmlFor="form3Example4cdg"
                         >
-                          <i class="fa-solid fa-lock"></i> Confirm password
+                          <i className="fa-solid fa-lock"></i> Confirm password
                         </label>
                         <input
                           type="password"
@@ -121,8 +139,8 @@ function Signup() {
 
                       <div className="d-flex justify-content-center">
                         <button
-                          type="button"
                           className="btn btn btn-dark"
+                          type="submit"
                           style={{ width: "100%", height: "3rem" }}
                         >
                           <b>SIGN UP</b>

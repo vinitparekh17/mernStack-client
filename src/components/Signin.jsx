@@ -21,7 +21,7 @@ function Signin() {
                     <form>
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example3cg">
-                          <i class="fa-solid fa-envelope"></i> Email Address
+                          <i className="fa-solid fa-envelope"></i> Email Address
                         </label>
                         <input
                           type="email"
@@ -32,7 +32,7 @@ function Signin() {
 
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example4cg">
-                          <i class="fa-solid fa-lock"></i> Password
+                          <i className="fa-solid fa-lock"></i> Password
                         </label>
                         <input
                           type="password"
