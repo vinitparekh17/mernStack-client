@@ -10,6 +10,9 @@ function Home() {
             <span className="spanhome">Multimedia</span>
           </h1>
           <p>A place where you find entertainment and knowlage together! </p>
+          <button className="button-29" role="button">
+            Get Started
+          </button>
           <div className="cardds">
             <span className="cardd">
               <i class="fa-brands fa-wikipedia-w"></i>

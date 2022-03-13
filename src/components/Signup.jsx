@@ -20,14 +20,20 @@ function Signup() {
   };
   const postData = async (e) => {
     e.preventDefault();
-    const { firstName, lastName, email, password, cpassword } = userData
-    console.log(JSON.stringify({firstName}));
-    const response = await axios.post("/register", { firstName, lastName, email, password, cpassword });
+    const { firstName, lastName, email, password, cpassword } = userData;
+    console.log(JSON.stringify({ firstName }));
+    const response = await axios.post("/register", {
+      firstName,
+      lastName,
+      email,
+      password,
+      cpassword,
+    });
 
     const data = response.json();
 
     if (data.status === 404 || !data) {
-      console.log("Invalid registration");;
+      console.log("Invalid registration");
     } else {
       console.log("Registration successfull");
     }
@@ -68,13 +74,12 @@ function Signup() {
                   className="card"
                   style={{
                     border: "none",
-                    background: "transparent",
+                    background: "transparent"
                   }}
                 >
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">
-                      <strong
-                        className="formtitle">USER REGISTRATION</strong>
+                      <strong className="formtitle">USER REGISTRATION</strong>
                     </h2>
 
                     <form method="POST" onSubmit={postData}>

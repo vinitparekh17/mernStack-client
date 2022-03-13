@@ -5,7 +5,7 @@ function Navbar() {
   
   return (
     <>
-      <nav id="nav" className="navbar navbar-expand-lg navbar-light">
+      <nav id="nav" className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <strong>
