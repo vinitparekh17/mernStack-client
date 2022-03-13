@@ -21,68 +21,100 @@ function Signup() {
   const postData = async (e) => {
     e.preventDefault();
     const { firstName, lastName, email, password, cpassword } = userData
-    console.log(JSON.stringify(userData));
-    const response = await axios.post("/register", JSON.stringify({firstName, lastName, email, password, cpassword}));
+    console.log(JSON.stringify({firstName}));
+    const response = await axios.post("/register", { firstName, lastName, email, password, cpassword });
 
     const data = response.json();
 
-    if (data.status === 422 || !data) {
-      window.alert("Invalid registration!");
+    if (data.status === 404 || !data) {
+      console.log("Invalid registration");;
     } else {
-      window.alert("Registration successfull");
+      console.log("Registration successfull");
     }
   };
 
   return (
     <>
       <section>
-        <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-          <div className="container mt-3 h-100">
-            <div className="row d-flex justify-content-center align-items-center h-100">
-              <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div className="card" style={{ border: "none" }}>
+        <div
+          className="mask d-flex align-items-center h-100 gradient-custom-3"
+          style={{
+            background: "transparent",
+            backdropFilter: "blur(10px) #fff",
+          }}
+        >
+          <div
+            className="container mt-3 h-100"
+            style={{
+              background: "transparent",
+              backdropFilter: "blur(10px) #fff",
+            }}
+          >
+            <div
+              className="row d-flex justify-content-center align-items-center h-100"
+              style={{
+                background: "transparent",
+                backdropFilter: "blur(10px) #fff",
+              }}
+            >
+              <div
+                style={{
+                  background: "transparent",
+                  backdropFilter: "blur(10px) #fff",
+                }}
+                className="col-12 col-md-9 col-lg-7 col-xl-6"
+              >
+                <div
+                  className="card"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                  }}
+                >
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">
-                      <strong>USER REGISTRATION</strong>
+                      <strong
+                        className="formtitle">USER REGISTRATION</strong>
                     </h2>
 
                     <form method="POST" onSubmit={postData}>
                       <div className="form-outline mb-4">
                         <table>
                           <tbody>
-                          <tr>
-                            <td>
-                              <label className="form-label">
-                                <i className="fa-solid fa-user"></i> First Name
-                              </label>
-                              <input
-                                type="text"
-                                id="form3Example1cg"
-                                name="firstName"
-                                className="form-control form-control-lg me-4"
-                                value={userData.firstName}
-                                onChange={handleChange}
-                                autoComplete="off"
-                                required
-                              />
-                            </td>
-                            <td>
-                              <label className="form-label ms-4">
-                                <i className="fa-solid fa-user"></i> Last Name
-                              </label>
-                              <input
-                                type="text"
-                                id="form3Example1cg"
-                                name="lastName"
-                                className="form-control form-control-lg ms-4"
-                                value={userData.lastName}
-                                onChange={handleChange}
-                                autoComplete="off"
-                                required
-                              />
-                            </td>
+                            <tr>
+                              <td>
+                                <label className="form-label">
+                                  <i className="fa-solid fa-user"></i> First
+                                  Name
+                                </label>
+                                <input
+                                  type="text"
+                                  id="form3Example1cg"
+                                  name="firstName"
+                                  className="form-control form-control-lg me-4"
+                                  value={userData.firstName}
+                                  onChange={handleChange}
+                                  autoComplete="off"
+                                  required
+                                />
+                              </td>
+                              <td>
+                                <label className="form-label ms-4">
+                                  <i className="fa-solid fa-user"></i> Last Name
+                                </label>
+                                <input
+                                  type="text"
+                                  id="form3Example1cg"
+                                  name="lastName"
+                                  className="form-control form-control-lg ms-4"
+                                  value={userData.lastName}
+                                  onChange={handleChange}
+                                  autoComplete="off"
+                                  required
+                                />
+                              </td>
                             </tr>
-                            </tbody>
+                          </tbody>
                         </table>
                       </div>
 
@@ -139,9 +171,12 @@ function Signup() {
 
                       <div className="d-flex justify-content-center">
                         <button
-                          className="btn btn btn-dark"
+                          className="btn btn-primary"
                           type="submit"
-                          style={{ width: "100%", height: "3rem" }}
+                          style={{
+                            width: "100%",
+                            height: "3rem",
+                          }}
                         >
                           <b>SIGN UP</b>
                         </button>

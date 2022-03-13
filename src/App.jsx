@@ -8,6 +8,7 @@ import Contect from './components/Contect';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import ErrorPage from './components/ErrorPage';
+import Pic from "./images/bgimg.png"
 
 function App() {
   return (

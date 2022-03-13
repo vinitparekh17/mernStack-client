@@ -1,9 +1,16 @@
-.hub {
-  color: #000;
-  /* background-color: rgb(255, 136, 0); */
-  padding: .1rem;
-  border-radius: 5px;
+body{
+  background: url("./images/bgimg.png");
 }
+
+/* navbar section  */
+
+#nav{
+  background:transparent;
+  color: blue;
+  backdrop-filter: blur(10px);
+}
+
+/* home page  */
 
 .home{
   display: flex;
@@ -16,8 +23,42 @@
   /* backdrop-filter: blur(10px); */
 }
 
-/* error page  */
+.home-text > h1{
+  font-weight: 900;
+  font-family: 'Roboto Slab', serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: justify;
+}
 
+.spanhome{
+  letter-spacing: .2rem;
+  color: blue;
+}
+
+/* home cards  */
+
+.cardds{
+  margin-top: 2rem;
+}
+
+.cardd{
+  background: rgba(255, 255, 255, 0.534);
+  margin: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #000;
+  border-radius: 100%;
+  padding: 1rem;
+}
+
+/* sign up sign in form  */
+#customform1 , #customform2{
+  backdrop-filter: blur(10px) #fff;
+  background: transparent;
+}
+
+/* error page  */
 #err{
   display: flex;
   justify-content: center;

@@ -5,11 +5,11 @@ function Navbar() {
   
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="nav" className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <strong>
-              Study <span className="hub">hub</span>
+             Multi<span style={{color: "blue"}}>Media</span>
             </strong>
           </a>
           <button
