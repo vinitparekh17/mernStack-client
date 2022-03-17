@@ -3,6 +3,7 @@ import axios from "axios";
 
 function Neko() {
   const [value, setValue] = useState({});
+  const [data, setData] = useState({});
 
   let name, val
   const handleChange = (e) => {
@@ -11,7 +12,7 @@ function Neko() {
     setValue({ ...value, ["option"]: val });
   };
 
-  const postData = async (e) => {
+  const postData = async(e, callback) => {
     e.preventDefault();
     try {
       const { option } = value
@@ -22,12 +23,21 @@ function Neko() {
     }
   };
 
+  const getData = async () => {
+    try {
+      const { data } = await axios.get("/getanime")
+      setData(data)
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
+
   return (
     <>
-      <form>
+      <form className="form-wrapper">
         <select
           name="quary"
-          class="form-control mt-5"
+          id="search"
           onChange={(e) => handleChange(e)}
         >
           <option defaultValue="0">Choose your category</option>
@@ -41,8 +51,17 @@ function Neko() {
           <option value="8">smug</option>
           <option value="9">punch</option>
         </select>
-        <button className="btn btn-success" onClick={postData}>Search</button>
-      </form>
+        <button id="submit" onClick={e => postData(e, getData())}>Search</button>
+        
+        </form>
+        {(data.url) ?
+        <div className="img">
+          <center>
+            <img className="animeimg" src={data.url} alt="" />
+          </center>
+          </div>
+          : null
+        }
     </>
   );
 }

@@ -10,6 +10,10 @@ body{
   backdrop-filter: blur(10px);
 }
 
+.nav-link{
+  font-weight: 500;
+  color: #0A1931;
+}
 /* home page  */
 
 .home{
@@ -93,22 +97,26 @@ body{
 
 /* home cards  */
 
-
-
 .cardds{
   margin-top: 5rem;
 }
 
 .cardd{
   background: rgba(255, 255, 255, 0.534);
-  margin: 2.5rem;
+  cursor:pointer;
+  margin: 15px;
   width: 5rem;
   height: 5rem;
-  border: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   border-radius: 100%;
+  box-shadow: 2px 5px 10px #0A1931;
   padding: 1rem;
 }
 
+.cardd:hover{
+  transform: translateX(-10px);
+}
 /* error page  */
 #err{
   display: flex;
@@ -143,31 +151,17 @@ body{
 /* movies  */
 
 .moviecard{
-  width: 60%;
-  margin-left: 20%;
+  width: 70%;
+  margin-left: 15%;
   margin-top: 5rem;
 }
 
 .im{
   border-radius: 10px;
-  height: 50vh;
 }
 
 .mtable{
   text-align: center;
-}
-
-.minput-txt {
-  display: inline-block;
-  margin-top: 2rem;
-  width: 52%;
-  margin-left: 20%;
-}
-
-.minput-btn {
-  display: inline-block;
-  margin-left: 1%;
-  width: 4.5rem;
 }
 
 #mtitle{
@@ -184,18 +178,22 @@ body{
 }
 
 .mtd{
-    border: 1px solid #FF5151;
     padding: 5px;
     color: #100068;
 }
 
 .mcontain{
     position: relative;
+    background: rgba(255, 255, 255, 0.185);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    margin: 2% 10%;
     padding: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.521);
+    border-radius: 15px;
 }
 
 .mp{
@@ -204,7 +202,7 @@ body{
 }
 
 .mcontent{
-    text-align: center;
+    text-align:justify;
     line-height: 2;
     width: 90%;
     font-weight: 600;
@@ -216,8 +214,7 @@ body{
 #mabout{
     width: 70%;
     position: relative;
-    text-align: center;
-    left: 15%;
+    text-align: justify;
 }
 
 .mdt{
@@ -228,5 +225,150 @@ body{
     border-bottom: 2px solid;
     color: #100068;
     font-weight: 900;
+}
+
+/* anime page  */
+
+.animeimg{
+  height: 35rem;
+  margin: 0% 0 5% 0%;
+  border-radius: 10%;
+  box-shadow: 0 5px 15px #000;
+}
+
+.animeinput{
+  margin: 10% .5% auto 8%;
+  width: 70%;
+  display: inline-block;
+}
+
+.animebutton{
+  width: 5%;
+}
+
+/* wiki page */
+
+.topmargin{
+  margin-top: 4rem;
+}
+
+/* search bar  */
+
+.form-wrapper {
+background-color: #f6f6f6;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eae8e8));
+background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
+background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+border-color: #dedede #bababa #aaa #bababa;
+border-style: solid;
+border-width: 1px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+margin: 100px auto;
+overflow: hidden;
+padding: 8px;
+width: 450px;
+}
+
+.form-wrapper #search {
+border: 1px solid #CCC;
+-webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+-moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+  color: #999;
+float: left;
+font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+height: 40px;
+padding: 10px;
+width: 320px;
+}
+
+.form-wrapper #search:focus {
+border-color: #aaa;
+-webkit-box-shadow: 0 1px 1px #bbb inset;
+-moz-box-shadow: 0 1px 1px #bbb inset;
+box-shadow: 0 1px 1px #bbb inset;
+outline: 0;
+}
+
+.form-wrapper #search:-moz-placeholder,
+.form-wrapper #search:-ms-input-placeholder,
+.form-wrapper #search::-webkit-input-placeholder {
+color: #999;
+font-weight: normal;
+}
+
+.form-wrapper #submit {
+background-color: #0483a0;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#31b2c3), to(#0483a0));
+background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
+background-image: -moz-linear-gradient(top, #31b2c3, #0483a0);
+background-image: -ms-linear-gradient(top, #31b2c3, #0483a0);
+background-image: -o-linear-gradient(top, #31b2c3, #0483a0);
+background-image: linear-gradient(top, #31b2c3, #0483a0);
+border: 1px solid #00748f;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #FFF;
+color: #fafafa;
+cursor: pointer;
+height: 42px;
+float: right;
+font: 15px Arial, Helvetica;
+padding: 0;
+text-transform: uppercase;
+text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
+width: 100px;
+}
+
+.form-wrapper #submit:hover,
+.form-wrapper #submit:focus {
+background-color: #31b2c3;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#0483a0), to(#31b2c3));
+background-image: -webkit-linear-gradient(top, #0483a0, #31b2c3);
+background-image: -moz-linear-gradient(top, #0483a0, #31b2c3);
+background-image: -ms-linear-gradient(top, #0483a0, #31b2c3);
+background-image: -o-linear-gradient(top, #0483a0, #31b2c3);
+background-image: linear-gradient(top, #0483a0, #31b2c3);
+}
+
+.form-wrapper #submit:active {
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+outline: 0;
+}
+
+.form-wrapper #submit::-moz-focus-inner {
+border: 0;
+}
+
+.weathertext{
+  margin: 5% 10%;
+  width: 80%;
+  background: #ffffff77;
+  backdrop-filter: blur(20px);
+  padding: 2% 20%;
+  font-size: 2em;
+  border: 1px solid #fff;
+  border-radius: 5rem;
+  text-align: justify;
+}
+
+.weathertext h1, h2{
+  font-weight: 900;
 }
 

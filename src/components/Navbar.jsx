@@ -8,7 +8,7 @@ function Navbar() {
       <nav id="nav" className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <strong>
+            <strong id="strong">
              Multi<span style={{color: "blue"}}>Media</span>
             </strong>
           </a>

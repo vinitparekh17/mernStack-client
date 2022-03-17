@@ -30,13 +30,13 @@ function Signup() {
       cpassword,
     });
 
-    const data = response.json();
+    // const data = response.json();
 
-    if (data.status === 404 || !data) {
-      console.log("Invalid registration");
-    } else {
-      console.log("Registration successfull");
-    }
+    // if (data.status === 404 || !data) {
+    //   console.log("Invalid registration");
+    // } else {
+    //   console.log("Registration successfull");
+    // }
   };
 
   return (

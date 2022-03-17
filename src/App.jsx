@@ -10,6 +10,8 @@ import Signin from './components/Signin';
 import Movies from './components/Movies';
 import Neko from './components/Neko';
 import ErrorPage from './components/ErrorPage';
+import Wiki from './components/Wiki';
+import Weather from './components/Weather';
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Signin />} />
         <Route path='/movies' element={<Movies />} />
+        <Route path='/wiki' element={<Wiki />} />
         <Route path='/anime' element={<Neko />} />
+        <Route path='/weather' element={<Weather />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
 

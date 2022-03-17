@@ -5,7 +5,6 @@ import img3 from "../images/bangubai.jpg";
 import axios from "axios";
 
 const Movies = () => {
-
   const [movieData, setMovieData] = useState({});
   const getData = async (event) => {
     event.preventDefault();
@@ -34,7 +33,6 @@ const Movies = () => {
       } = data;
       setMovieData(data);
       console.log(movieData);
-
     } catch (e) {
       console.log(e);
     }
@@ -49,40 +47,24 @@ const Movies = () => {
         >
           <div className="carousel-inner">
             <div className="carousel-item active" data-bs-interval="2000">
-              <img
-                src={img1}
-                className="d-block w-100 im"
-                alt="..."
-              />
+              <img src={img1} className="d-block w-100 im" alt="..." />
             </div>
             <div className="carousel-item" data-bs-interval="2000">
-              <img
-                src={img2}
-                className="d-block w-100 im"
-                alt="..."
-              />
+              <img src={img2} className="d-block w-100 im" alt="..." />
             </div>
             <div className="carousel-item">
-              <img
-                src={img3}
-                className="d-block w-100 im"
-                alt="..."
-              />
+              <img src={img3} className="d-block w-100 im" alt="..." />
             </div>
           </div>
         </div>
       </div>
       <div className="searchbar">
-        <form onSubmit={(e) => getData(e)}>
-          <input
-            className="form-control minput-txt"
-            type="text"
-            placeholder="Search movies"
-          />
-          <input className="btn btn-success minput-btn" type="submit" value="Search" />
+        <form className="form-wrapper" onSubmit={(e) => getData(e)}>
+          <input type="text" id="search" placeholder="Search for..." required />
+          <input type="submit" value="Search" id="submit" />
         </form>
       </div>
-      {(movieData.Title) ?
+      {movieData.Title ? (
         <section className="movies">
           <div className="mcontain">
             <div className="mcontent">
@@ -103,12 +85,10 @@ const Movies = () => {
                     <td className="mtd">{movieData.imdbVotes}</td>
                   </tr>
                 </table>
+                {movieData.Year} • {movieData.Rated} • {movieData.Runtime}
               </center>
-              <p className="p">
-                {" "}
-                {movieData.Year} • {movieData.Rated} • {movieData.Runtime}{" "}
-              </p>
-              <img src={movieData.Poster} alt="poster" />
+              
+              <img style={{borderRadius: "10%", boxShadow: "0 2px 20px #101010"}} src={movieData.Poster} align="right" alt="poster" />
               <dl>
                 <dt className="mdt">
                   <span className="mspan">Released</span>
@@ -119,7 +99,6 @@ const Movies = () => {
                   <dd>{movieData.Genre}</dd>
                 </dt>
                 <dt className="mdt">
-                  {" "}
                   <span className="mspan">About</span>
                   <dd>
                     <p id="mabout">{movieData.Plot}</p>
@@ -133,14 +112,11 @@ const Movies = () => {
                   <span className="mspan">Actors</span>
                   <dd>{movieData.Actors}</dd>
                 </dt>
-                <dt className="mdt">
-                  <span className="mspan">Language</span>
-                  <dd>{movieData.Language}</dd>
-                </dt>
               </dl>
-            </div>
+              </div>
           </div>
-        </section> : null}
+        </section>
+      ) : null}
     </>
   );
 };
