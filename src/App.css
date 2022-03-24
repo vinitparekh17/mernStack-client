@@ -92,31 +92,9 @@ body{
 }
 
 .nav-link, .nev-item{
-  color: #fff;
+  font-weight: 600;
 }
 
-/* home cards  */
-
-.cardds{
-  margin-top: 5rem;
-}
-
-.cardd{
-  background: rgba(255, 255, 255, 0.534);
-  cursor:pointer;
-  margin: 15px;
-  width: 5rem;
-  height: 5rem;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
-  border-radius: 100%;
-  box-shadow: 2px 5px 10px #0A1931;
-  padding: 1rem;
-}
-
-.cardd:hover{
-  transform: translateX(-10px);
-}
 /* error page  */
 #err{
   display: flex;
@@ -146,6 +124,12 @@ body{
   position: absolute;
   top: 15rem;
   text-transform: uppercase;
+}
+
+/* contect us  */
+#contect{
+  margin: 5rem 5%;
+  width: 90%;
 }
 
 /* movies  */
@@ -370,5 +354,13 @@ border: 0;
 
 .weathertext h1, h2{
   font-weight: 900;
+}
+
+
+/* login and signup */
+
+.glass{
+  backdrop-filter: blur(10px);
+  background: #fff;
 }
 

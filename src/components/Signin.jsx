@@ -4,21 +4,41 @@ import { Link } from "react-router-dom";
 function Signin() {
   return (
     <>
-      <section>
-        <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-          <div className="container mt-3 h-100">
-            <div className="row d-flex justify-content-center align-items-center h-100">
+      <section className="mt-5">
+          <div
+            className="container mt-3 h-100 glass"
+            style={{
+              background: "transparent",
+              backdropFilter: "blur(10px) #fff",
+            }}
+          >
+            <div
+              className="row d-flex justify-content-center align-items-center h-100"
+              style={{
+                background: "transparent",
+                backdropFilter: "blur(10px) #fff",
+              }}
+            >
               <div
-                id="customform1"
+                style={{
+                  background: "transparent",
+                  backdropFilter: "blur(10px) #fff",
+                }}
                 className="col-12 col-md-9 col-lg-7 col-xl-6"
               >
-                <div className="card" style={{ border: "none" }}>
+                <div
+                  className="card"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                  }}
+                >
                   <div className="card-body p-4">
                     <h2 className="text-uppercase text-center mb-3">
-                      <strong>USER LOGIN</strong>
+                      <strong className="formtitle">LOGIN NOW</strong>
                     </h2>
 
-                    <form>
+                    <form method="POST">
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form3Example3cg">
                           <i className="fa-solid fa-envelope"></i> Email Address
@@ -26,7 +46,12 @@ function Signin() {
                         <input
                           type="email"
                           id="form3Example3cg"
+                          name="email"
                           className="form-control form-control-lg"
+                          value=""
+                          onChange=""
+                          autoComplete="off"
+                          required
                         />
                       </div>
 
@@ -37,37 +62,43 @@ function Signin() {
                         <input
                           type="password"
                           id="form3Example4cg"
+                          name="password"
                           className="form-control form-control-lg"
+                          value=""
+                          onChange=""
+                          autoComplete="off"
+                          required
                         />
                       </div>
 
                       <div className="d-flex justify-content-center">
                         <button
-                          type="button"
-                          className="btn btn btn-dark"
-                          style={{ width: "100%", height: "3rem" }}
+                          className="btn btn-dark"
+                          type="submit"
+                          style={{
+                            width: "100%",
+                            height: "3rem",
+                          }}
                         >
                           <b>LOGIN</b>
                         </button>
                       </div>
 
-                      <p className="text-center text-muted mt-3 mb-0">
+                      <p className="text-center mt-3 mb-0">
                         Don't have an account? &nbsp;
                         <Link
                           to="/signup"
-                          className="fw-bold text-body"
-                          style={{ textDecoration: "none" }}
+                          style={{ textDecoration: "none", fontWeight: "500" }}
                         >
                           <u>Register now</u>
                         </Link>
                       </p>
                     </form>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+            </div>
       </section>
     </>
   );

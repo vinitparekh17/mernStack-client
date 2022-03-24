@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 function Home() {
-
   return (
     <>
       <div className="home">
@@ -10,27 +10,13 @@ function Home() {
             <span className="spanhome">Multimedia</span>
           </h1>
           <p>A place where you find entertainment and knowlage together! </p>
-          <button className="button-29" role="button">
+          <Link className="button-29 text-light" role="button" to="/signin">
             Get Started
-          </button>
-          <div className="cardds">
-            <span className="cardd">
-              <i class="fa-brands fa-wikipedia-w"></i>
-            </span>
-            <span className="cardd">
-              <i class="fa-solid fa-clapperboard"></i>
-            </span>
-            <span className="cardd">
-              <i class="fa-solid fa-face-smile-beam"></i>
-            </span>
-            <span className="cardd">
-              <i class="fa-solid fa-images"></i>
-            </span>
-          </div>
+          </Link>
         </div>
       </div>
     </>
   );
 }
 
-export default Home
+export default Home;

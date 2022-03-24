@@ -41,7 +41,7 @@ function Signup() {
 
   return (
     <>
-      <section>
+      <section className="mt-5">
         <div
           className="mask d-flex align-items-center h-100 gradient-custom-3"
           style={{
@@ -50,7 +50,7 @@ function Signup() {
           }}
         >
           <div
-            className="container mt-3 h-100"
+            className="container mt-3 h-100 glass"
             style={{
               background: "transparent",
               backdropFilter: "blur(10px) #fff",
@@ -74,7 +74,7 @@ function Signup() {
                   className="card"
                   style={{
                     border: "none",
-                    background: "transparent"
+                    background: "transparent",
                   }}
                 >
                   <div className="card-body p-4">
@@ -94,7 +94,6 @@ function Signup() {
                                 </label>
                                 <input
                                   type="text"
-                                  id="form3Example1cg"
                                   name="firstName"
                                   className="form-control form-control-lg me-4"
                                   value={userData.firstName}
@@ -109,7 +108,6 @@ function Signup() {
                                 </label>
                                 <input
                                   type="text"
-                                  id="form3Example1cg"
                                   name="lastName"
                                   className="form-control form-control-lg ms-4"
                                   value={userData.lastName}
@@ -176,7 +174,7 @@ function Signup() {
 
                       <div className="d-flex justify-content-center">
                         <button
-                          className="btn btn-primary"
+                          className="btn btn-dark"
                           type="submit"
                           style={{
                             width: "100%",
@@ -187,12 +185,11 @@ function Signup() {
                         </button>
                       </div>
 
-                      <p className="text-center text-muted mt-3 mb-0">
+                      <p className="text-center mt-3 mb-0">
                         Have already an account? &nbsp;
                         <Link
                           to="/signin"
-                          className="fw-bold text-body"
-                          style={{ textDecoration: "none" }}
+                          style={{ textDecoration: "none", fontWeight: "500" }}
                         >
                           <u>Login here</u>
                         </Link>
